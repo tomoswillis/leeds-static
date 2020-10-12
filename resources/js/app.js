@@ -14,7 +14,35 @@ import foobar from './components/foobar';
 
 const store = new Vuex.Store({
 	state: {
+		food: [
+			{
+				'id': 1,
+				'name': 'manahatta',
+				'category': 'cocktailBar',
+				'location': {
+					'streetName': 'foobar',
+					'streetNumb': '2',
+					'postcode': '234 foobar',
+					'sortHand': 'leeds city centre'
+					},
+				'description': 'random things',
+			},
+			{
+				'id': 2,
+				'name': 'box',
+				'category': 'cocktailBar',
+				'location': {
+					'streetName': 'foobar',
+					'streetNumb': '2',
+					'postcode': '234 foobar',
+					'sortHand': 'leeds city centre'
+					},
+				'description': 'random thing',
+			},
+		],
+		events: [
 
+		],
 	},
 	
 	mutations: {
