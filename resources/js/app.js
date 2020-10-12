@@ -1,18 +1,32 @@
 /* eslint-disable no-new */
 
 import Vue from 'vue';
+import Vuex from 'vuex';
+import VueSlickCarousel from 'vue-slick-carousel';
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 
-// Common
-// import Foo from './components/Foo';
-// import Bar from './components/Bar';
+Vue.use(Vuex);
+
+import foobar from './components/foobar';
 
 // Global
-// Vue.component('Foo', Foo);
+// Vue.component('my-component', MyComponent);
+
+const store = new Vuex.Store({
+	state: {
+
+	},
+	
+	mutations: {
+
+	},
+
+	actions: {
+	},
+
+});
 
 new Vue({
 	el: '#app',
-
-	components: {
-		// Bar,
-	},
+	components: { VueSlickCarousel, foobar },
 });

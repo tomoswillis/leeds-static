@@ -7,6 +7,7 @@ module.exports = {
         content: [
             './resources/**/*.vue',
             './resources/**/*.scss',
+            '/public/**/*.html',
         ],
     },
     theme: {
