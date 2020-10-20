@@ -12,11 +12,15 @@ import event from './components/event'
 import slider from './components/slider'
 import eventslider from './components/eventslider'
 import restaurant from './components/restaurant'
+import restaurantsearch from './components/restaurantsearch'
+import foo from './components/foo'
 import datepicker from './components/datepicker'
+
 
 Vue.use(Vuex)
 Vue.component("VueSlickCarousel", require("vue-slick-carousel"));
 Vue.component("restaurant", restaurant);
+Vue.component("restaurantsearch", restaurantsearch);
 Vue.component("event", event);
 Vue.use(VCalendar, {
 	componentPrefix: 'vc',  // Use <vc-calendar /> instead of <v-calendar />..other defaults 
@@ -45,6 +49,12 @@ const store = new Vuex.Store({
 				},
 				'description': 'Located in the heart of Headingley, Leeds, Manahatta is a glamorous New York inspired cocktail bar, set across two floors',
 				'thumbnail': 'static/images/restaurants/manahatta/thumbnail.png',
+				'times': {
+					'open':12,
+					'close':1,
+				},
+				'rating': 4,
+				'averageCost':25,
 			},
 			'box': {
 				'id': 2,
@@ -66,6 +76,11 @@ const store = new Vuex.Store({
 				},
 				'description': 'We’re an award-winning sports bar based in the centre of Leeds serving the best food & drink. Join us for sport, shuffleboard and cocktails.',
 				'thumbnail': 'static/images/restaurants/box/thumbnail.png',
+				'times': {
+					'open':12,
+					'close':1,
+				},
+				'rating': 4,
 			},
 			'bills': {
 				'id': 3,
@@ -87,6 +102,11 @@ const store = new Vuex.Store({
 				},
 				'description': 'Bill’s is a place for every occasion whether you want a quick breakfast with colleagues or you are celebrating a special birthday dinner with friends and family.',
 				'thumbnail': 'static/images/restaurants/bills/thumbnail.png',
+				'times': {
+					'open':12,
+					'close':1,
+				},
+				'rating': 4,
 			},
 			'byron': {
 				'id': 4,
@@ -108,6 +128,11 @@ const store = new Vuex.Store({
 					},
 				'description': 'American-inspired chain diner serving posh hamburgers with a choice of toppings, sides and salads.',
 				'thumbnail': 'static/images/restaurants/byron/thumbnail.png',
+				'times': {
+					'open':12,
+					'close':1,
+				},
+				'rating': 4,
 			},
 		},
 		events: {
@@ -232,6 +257,8 @@ new Vue({
 		slider, 
 		restaurant, 
 		datepicker,
+		foo,
+		restaurantsearch,
 		VueSlickCarousel, 
 	},
 });
