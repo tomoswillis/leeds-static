@@ -1,20 +1,20 @@
 <template>
-<div class="">
-<div class="mx-10 my-10">
+<div class=" md:mx-10">
+	<div class="mx-10 my-10 md:flex justify-between items-baseline md:my-2">
 		<div>
 			<h1 class="text-3xl mt-10">All Restaurants</h1>
 		</div>
-		<div>
-			<div class="bg-gray-300 px-2 py-3 my-5">
-				<input type="text" placeholder="Search" class="bg-transparent">
-				<button>o</button>
+		<div class="md:w-2/5">
+			<div class="shadow-md px-2 my-5 flex justify-between rounded-lg">
+				<input type="text" placeholder="Search" class="bg-transparent w-4/5">
+				<button class="bg-orange-500 w-8 h-8 rounded-md my-2"></button>
 			</div>
 		</div>
 	</div>
-	<div class="bg-blue-100">
+	<div class="bg-gray-200 rounded-lg">
 		<div>
-			<div class="flex justify-around">
-				<div class="p-5 bg-white mt-5 rounded-md">
+			<div class="flex ml-10">
+				<div class="p-5 bg-white mt-5 rounded-md mr-5">
 					<select name="sort" id="sort">
 						<option value="nameasc">Ascending</option>
 						</select>
@@ -30,8 +30,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="mt-5">
-			<div v-for="restaurant in restaurants" class="md:flex">
+		<div class="mt-5 flex flex-wrap justify-center">
+			<div v-for="restaurant in restaurants" class="">
+				<restaurantsearch :slug="restaurant" class=""></restaurantsearch>
 				<restaurantsearch :slug="restaurant" class=""></restaurantsearch>
 			</div>
 		</div>

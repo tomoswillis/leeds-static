@@ -51,7 +51,7 @@ const store = new Vuex.Store({
 				'thumbnail': 'static/images/restaurants/manahatta/thumbnail.png',
 				'times': {
 					'open':12,
-					'close':1,
+					'close':18,
 				},
 				'rating': 4,
 				'averageCost':25,
@@ -78,7 +78,7 @@ const store = new Vuex.Store({
 				'thumbnail': 'static/images/restaurants/box/thumbnail.png',
 				'times': {
 					'open':12,
-					'close':1,
+					'close':23,
 				},
 				'rating': 4,
 			},
@@ -103,8 +103,8 @@ const store = new Vuex.Store({
 				'description': 'Bill’s is a place for every occasion whether you want a quick breakfast with colleagues or you are celebrating a special birthday dinner with friends and family.',
 				'thumbnail': 'static/images/restaurants/bills/thumbnail.png',
 				'times': {
-					'open':12,
-					'close':1,
+					'open':9,
+					'close':17,
 				},
 				'rating': 4,
 			},
@@ -130,7 +130,7 @@ const store = new Vuex.Store({
 				'thumbnail': 'static/images/restaurants/byron/thumbnail.png',
 				'times': {
 					'open':12,
-					'close':1,
+					'close':18,
 				},
 				'rating': 4,
 			},
@@ -236,6 +236,10 @@ const store = new Vuex.Store({
 				'thumbnail': 'static/images/events/theFirstDirect/theCuriousDog-thumbnail.png',
 				'bookingLink': 'http://www.test.com',
 			},
+		},
+		time:{
+			hour:new Date().getHours(),
+			min: new Date().getMinutes(),
 		},
 	},
 	
