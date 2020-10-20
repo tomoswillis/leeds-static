@@ -22,10 +22,6 @@ Vue.use(VCalendar, {
 	componentPrefix: 'vc',  // Use <vc-calendar /> instead of <v-calendar />..other defaults 
 });
 
-// Global
-// Vue.component('my-component', MyComponent);
-
-
 const store = new Vuex.Store({
 	state: {
 		restaurants: {
