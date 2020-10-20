@@ -49,12 +49,15 @@
 					}
 				},
 				{
-				"breakpoint": 480,
+				"breakpoint": 320,
 				"settings": {
+					"infinite": true,
 					"slidesToShow": 1,
-					"slidesToScroll": 1
+					"speed": 500,
+					"rows": 2,
+					"slidesPerRow": 1
 					}
-				}
+				},
 			]
 		},
       }

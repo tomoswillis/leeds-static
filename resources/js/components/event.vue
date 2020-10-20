@@ -1,10 +1,12 @@
 <template>
-<div>
-	<div class="">
+<div class="px-2 cursor-pointer">
+	<div class="bg-thumbnail rounded-xl">
 		<div class=" flex flex-col justify-end inline text-white">
-			<img :src="event.thumbnail" alt="" class="">
-			<h2 class="text-2xl font-bold absolute px-5 mb-10">{{event.name}}</h2>
-			<h3 class="text-lg absolute px-5 mb-5">{{event.venue}}</h3>
+			<img :src="event.thumbnail" alt="" class="w-full">
+			<div class=" absolute">
+				<h2 class="text-2xl font-bold px-5">{{event.name}}</h2>
+				<h3 class="text-lg px-5 mb-5">{{event.venue}}</h3>
+			</div>
 		</div>
 	</div>
 	<div class="px-5">
@@ -18,7 +20,6 @@
 			<div v-else>
 				Free
 			</div>
-
 		</div>
 		<p class="text-sm">{{event.description}}</p>
 		<a :href="event.bookingLink">

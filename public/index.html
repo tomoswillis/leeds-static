@@ -7,22 +7,33 @@
 
     <!-- <link rel="stylesheet" href="/compiled/css/app.css"> -->
     <link rel="stylesheet" href="/assets/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="flex w-full bg-red-300 px-20 justify-between min-h-screen items-center">
-        <div class="">
-            <h1 class="text-5xl">Welcome to Leeds</h1>
-            <p class="text-xl">Live Love Leeds</p>
-        </div>
+<body class="">
+    <!-- video header -->
+    <div class="flex px-20 justify-between min-h-screen items-center">
         <div>
-            <h2 class="text-2xl mt-16">Current Weather</h2>
+            <video autoplay muted loop id="myVideo">
+                <source src="static/videos/header.mp4" type="video/mp4" class="w-full min-h-screen">
+            </video>
+            <div class="headerText flex justify-between items-center ">
+                <div class="">
+                    <h1 class="text-5xl">Welcome to Leeds</h1>
+                    <p class="text-xl">Live Love Leeds</p>
+                </div>
+                <div>
+                    <!-- <h2 class="text-2xl mt-16">Current Weather</h2> -->
+                </div>
+              </div>
         </div>
     </div>
-    <div id="app" class="sm:mx-5 md:mx-20 my-10">
+    <!-- main body -->
+    <div id="app" class="sm:mx-5 md:mx-10 lg:mx-20 my-10">
+        <!-- events component -->
         <div>
-            <h2 class="text-2xl">Upcoming Events</h2>
+            <h2 class="text-2xl mb-5 ml-5">Upcoming Events</h2>
         </div>
-        <div class="flex mt-5 justify-center">
+        <!-- <div class="flex mt-5 justify-center">
             <event 
                 class=" 
                     pr-5
@@ -85,14 +96,28 @@
                     " 
                 slug='curiousIncident'>
             </event>
+        </div> -->
+        <div class="sm:w-1 md:w-full xl:w-10/12 center">
+            <eventslider
+                slug-one='swanLake'
+                slug-two='beerPong'
+                slug-three='treeKicks' 
+                slug-four='warHorse'
+                slug-five='curiousIncident'>
+            </eventslider>
         </div>
+        
         <div>
-            <h2 class="text-2xl mb-10 mt-16" >Our Recommend Restaurants</h2>
-            <slider slug-one='manahatta' slug-two='box' slug-three='byron' slug-four='bills'></slider>
+            <h2 class="text-2xl mb-10 mt-16 text-center" >Our Recommend Restaurants</h2>
+            <slider 
+                slug-one='manahatta'
+                slug-two='box'
+                slug-three='byron' 
+                slug-four='bills'>
+            </slider>
         </div>
     </div>
-
-    <!-- <script src="/compiled/js/app.js" async></script> -->
     <script src="/assets/js/app.js" async></script>
 </body>
 </html>
+

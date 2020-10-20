@@ -2,6 +2,7 @@
 
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VCalendar from 'v-calendar';
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
@@ -9,11 +10,17 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 import event from './components/event'
 import slider from './components/slider'
+import eventslider from './components/eventslider'
 import restaurant from './components/restaurant'
+import datepicker from './components/datepicker'
 
 Vue.use(Vuex)
 Vue.component("VueSlickCarousel", require("vue-slick-carousel"));
 Vue.component("restaurant", restaurant);
+Vue.component("event", event);
+Vue.use(VCalendar, {
+	componentPrefix: 'vc',  // Use <vc-calendar /> instead of <v-calendar />..other defaults 
+});
 
 // Global
 // Vue.component('my-component', MyComponent);
@@ -225,8 +232,10 @@ new Vue({
 	store,
 	components: {
 		event, 
+		eventslider,
 		slider, 
 		restaurant, 
+		datepicker,
 		VueSlickCarousel, 
 	},
 });
