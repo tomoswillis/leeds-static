@@ -1,8 +1,32 @@
 <template>
 <div class="mt-10">
 	
-	<div class="text-3xl mx-8 font-bold pt-5 text-gray-600">
+	<div class="text-3xl mx-8 font-bold pt-5 text-gray-600 flex items-center flex-wrap">
 		<h1>{{data.name}}: {{data.location.shortHand}}</h1>
+		<div class="ml-5">
+			<div>
+				<div class="flex">
+					<svg height="10" width="15"  viewBox="0 0 600 600" preserveAspectRatio="xMinYMin meet">
+						<polygon points="294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691" fill="#FB9E4F" stroke="#aaa" stroke-width="1"/>
+					</svg>
+						<svg height="10" width="15"  viewBox="0 0 600 600" preserveAspectRatio="xMinYMin meet">
+						<polygon points="294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691" fill="#FB9E4F" stroke="#aaa" stroke-width="1"/>
+					</svg>
+						
+						<svg height="10" width="15"  viewBox="0 0 600 600" preserveAspectRatio="xMinYMin meet">
+						<polygon points="294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691" fill="#FB9E4F" stroke="#aaa" stroke-width="1"/>
+					</svg>
+						
+						<svg height="10" width="15"  viewBox="0 0 600 600" preserveAspectRatio="xMinYMin meet">
+						<polygon points="294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691" fill="#FB9E4F" stroke="#aaa" stroke-width="1"/>
+					</svg>
+						
+						<svg height="10" width="15"  viewBox="0 0 600 600" preserveAspectRatio="xMinYMin meet">
+						<polygon points="294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691" fill="#C4C4C4" stroke="#aaa" stroke-width="1"/>
+					</svg>
+				</div>	
+			</div>
+		</div>
 	</div>
 	<div class="bg-gray-200 pb-5 mb-10">
 		<div class=" xl:flex xl:m-5 xl:justify-between xl:px-5 ">
