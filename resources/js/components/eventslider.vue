@@ -1,5 +1,5 @@
 <template>
-<div >
+<div class="">
   <VueSlickCarousel v-bind="settings" >
 	<event :slug=slugOne
 			class="
@@ -101,7 +101,8 @@
 			"centerMode": true,
 			"centerPadding": "20px",
 			'draggable': false,
-
+			'arrows': false,
+			'dots': true,
 			"responsive": [
 				{
 				"breakpoint": 1280,
@@ -109,9 +110,6 @@
 					"slidesToShow": 3,
 					"slidesToScroll": 3,
 					"initialSlide": 1,
-					
-					"dots": true,
-
 					}
 				},
 				{
