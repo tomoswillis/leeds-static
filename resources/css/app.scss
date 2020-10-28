@@ -27,3 +27,13 @@ color: #f1f1f1;
     margin: 0 auto;
 }
 
+.l-button:hover {
+    background-color: white;
+    border: 1px solid orange;
+    color: orange;
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+}

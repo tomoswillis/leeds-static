@@ -8,12 +8,14 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 
+
 import event from './components/event'
 import slider from './components/slider'
 import eventslider from './components/eventslider'
 import restaurant from './components/restaurant'
 import restaurantsearch from './components/restaurantsearch'
 import foo from './components/foo'
+import restaurantresult from './components/restaurantresult'
 import datepicker from './components/datepicker'
 
 
@@ -21,7 +23,9 @@ Vue.use(Vuex)
 Vue.component("VueSlickCarousel", require("vue-slick-carousel"));
 Vue.component("restaurant", restaurant);
 Vue.component("restaurantsearch", restaurantsearch);
+Vue.component('restaurantresult', restaurantresult);
 Vue.component("event", event);
+Vue.component("slider", slider);
 Vue.use(VCalendar, {
 	componentPrefix: 'vc',  // Use <vc-calendar /> instead of <v-calendar />..other defaults 
 });
@@ -41,18 +45,25 @@ const store = new Vuex.Store({
 					},
 				'accessability': {
 					'wifi': true,
-					'covid-safe': true,
-					'child-friendly': false,
-					'disabled-access': true,
-					'dog-friendly': false,
-					'private-hire': true,
+					'covidsafe': true,
+					'childFriendly': false,
+					'disabledAccess': true,
+					'dogFriendly': false,
+					'privateHire': true,
 				},
 				'description': 'Located in the heart of Headingley, Leeds, Manahatta is a glamorous New York inspired cocktail bar, set across two floors',
 				'thumbnail': 'static/images/restaurants/manahatta/thumbnail.png',
 				'times': {
-					'open':12,
-					'close':18,
+					'open': {
+						'hour': 10,
+						'minute': 10,
+					},
+					'close': {
+						'hour': 15,
+						'minute': 10,
+					},
 				},
+
 				'rating': 4,
 				'averageCost':25,
 			},
@@ -68,17 +79,23 @@ const store = new Vuex.Store({
 					},
 				'accessability': {
 					'wifi': true,
-					'covid-safe': true,
-					'child-friendly': false,
-					'disabled-access': true,
-					'dog-friendly': false,
-					'private-hire': true,
+					'covidsafe': true,
+					'childFriendly': false,
+					'disabledAccess': true,
+					'dogFriendly': false,
+					'privateHire': true,
 				},
 				'description': 'We’re an award-winning sports bar based in the centre of Leeds serving the best food & drink. Join us for sport, shuffleboard and cocktails.',
 				'thumbnail': 'static/images/restaurants/box/thumbnail.png',
 				'times': {
-					'open':12,
-					'close':23,
+					'open': {
+						'hour': 10,
+						'minute': 10,
+					},
+					'close': {
+						'hour': 15,
+						'minute': 10,
+					},
 				},
 				'rating': 4,
 			},
@@ -94,17 +111,23 @@ const store = new Vuex.Store({
 					},
 				'accessability': {
 					'wifi': true,
-					'covid-safe': true,
-					'child-friendly': false,
-					'disabled-access': true,
-					'dog-friendly': false,
-					'private-hire': true,
+					'covidsafe': true,
+					'childFriendly': false,
+					'disabledAccess': true,
+					'dogFriendly': false,
+					'privateHire': true,
 				},
 				'description': 'Bill’s is a place for every occasion whether you want a quick breakfast with colleagues or you are celebrating a special birthday dinner with friends and family.',
 				'thumbnail': 'static/images/restaurants/bills/thumbnail.png',
 				'times': {
-					'open':9,
-					'close':17,
+					'open': {
+						'hour': 10,
+						'minute': 10,
+					},
+					'close': {
+						'hour': 15,
+						'minute': 10,
+					},
 				},
 				'rating': 4,
 			},
@@ -129,9 +152,16 @@ const store = new Vuex.Store({
 				'description': 'American-inspired chain diner serving posh hamburgers with a choice of toppings, sides and salads.',
 				'thumbnail': 'static/images/restaurants/byron/thumbnail.png',
 				'times': {
-					'open':12,
-					'close':18,
+					'open': {
+						'hour': 10,
+						'minute': 10,
+					},
+					'close': {
+						'hour': 15,
+						'minute': 10,
+					},
 				},
+
 				'rating': 4,
 			},
 		},
@@ -237,10 +267,7 @@ const store = new Vuex.Store({
 				'bookingLink': 'http://www.test.com',
 			},
 		},
-		time:{
-			hour:new Date().getHours(),
-			min: new Date().getMinutes(),
-		},
+		time: ( new Date() ).toLocaleTimeString().split(/:| /),
 	},
 	
 	mutations: {
@@ -263,6 +290,7 @@ new Vue({
 		datepicker,
 		foo,
 		restaurantsearch,
+		restaurantresult,
 		VueSlickCarousel, 
 	},
 });

@@ -1,5 +1,5 @@
-<template>
-<div class="bg-white mx-2 px-2 py-4 my-5 rounded-lg max-w-xs shadow-sm">
+<template><a :href="'http://leeds-static.test/restaurant.html?id='+ data.name" >
+<div class="bg-white mx-2 px-2 py-4 my-5 rounded-lg max-w-xs shadow-md ">
 	<div class="px-2  cursor-pointer">
 		<div class="flex flex-col justify-end inline text-white bg-thumbnail rounded-xl">
 			<img :src="data.thumbnail" alt="" class="">
@@ -15,7 +15,7 @@
 						<p class="font-bold mr-2 text-green-500" v-if="this.open == 'true'">Open</p>
 						<p class="font-bold mr-2 text-orange-400" v-if="this.open == 'closing'">Closing Soon</p>
 						<p class="font-bold mr-2 text-red-400" v-if="this.open == 'false'">closed</p>
-						{{data.times.open}} - {{data.times.close}}
+						{{data.times.open.hour}}:{{data.times.open.minute}} - {{data.times.close.hour}}:{{data.times.close.minute}}
 					</div>
 					<div>
 						<div class="flex">
@@ -25,15 +25,15 @@
 								<svg height="10" width="15"  viewBox="0 0 600 600" preserveAspectRatio="xMinYMin meet">
 								<polygon points="294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691" fill="#FB9E4F" stroke="#aaa" stroke-width="1"/>
 							</svg>
-								</svg>
+								
 								<svg height="10" width="15"  viewBox="0 0 600 600" preserveAspectRatio="xMinYMin meet">
 								<polygon points="294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691" fill="#FB9E4F" stroke="#aaa" stroke-width="1"/>
 							</svg>
-								</svg>
+								
 								<svg height="10" width="15"  viewBox="0 0 600 600" preserveAspectRatio="xMinYMin meet">
 								<polygon points="294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691" fill="#FB9E4F" stroke="#aaa" stroke-width="1"/>
 							</svg>
-								</svg>
+								
 								<svg height="10" width="15"  viewBox="0 0 600 600" preserveAspectRatio="xMinYMin meet">
 								<polygon points="294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691" fill="#C4C4C4" stroke="#aaa" stroke-width="1"/>
 							</svg>
@@ -46,19 +46,20 @@
 		</div>
 	</div>
 </div>
-
+</a>
 </template>
 
 <script>
+	import { DateTime } from 'luxon';
 	export default {
         props: {
-            slug: String,
+			slug: String,
+			
         },
 		data() {
-			return {
-				open:'',
-				currentTime: this.$store.state.time.hour,
+			return {		
 				foo: this.$store.state.restaurants[this.slug],
+				open: 'true',
 			};
 		},  
 		computed: {
@@ -68,20 +69,14 @@
         },
         
         methods: {
-			areWeOpen(){
-				if(this.currentTime >= this.foo.times.open && this.currentTime < this.foo.times.close){
-					if(this.currentTime + 1 == this.foo.times.close){
-						return this.open = 'closing'
-					}else{
-						return this.open = 'true'
-					};
-				}else{
-					return this.open = "false"
-				}
-			},
+			
 		},
 		mounted: function () {
-			  this.areWeOpen()
+			console.log(
+				 DateTime.local(),
+				
+			);
+
 		}		
 	};
 </script>
